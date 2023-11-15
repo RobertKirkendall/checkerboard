@@ -1,5 +1,4 @@
 //make container for board
-console.log(getRandomColor())
 var container = document.createElement('container')
 document.body.appendChild(container)
 container.style.display = "flex"
@@ -10,14 +9,14 @@ container.style.backgroundColor = "black"
 
 
 
-
 //make smaller cells to fill container
 function makeSquareYellow(){
     const cell = document.createElement('div')
 container.appendChild(cell)
 cell.style.width = "12.5%"
 cell.style.height = "12.5%"
-cell.style.backgroundColor = getRandomColor()
+cell.style.backgroundColor = color()
+cell.style.backgroundImage = `linear-gradient(${color()}, ${color()})`
 //cell.style.backgroundColor = "red"
 //cell.style.border = '1px solid black'
 }
@@ -27,7 +26,8 @@ function makeSquarePurple(){
     container.appendChild(cell)
     cell.style.width = "12.5%"
     cell.style.height = "12.5%"
-    cell.style.backgroundColor = getRandomColor()
+    cell.style.backgroundColor = color()
+    cell.style.backgroundImage = `radial-gradient(${color()}, ${color()}, ${color()})`
     //cell.style.backgroundColor = "red"
     //cell.style.border = '1px solid black'
     }
@@ -35,7 +35,7 @@ function makeSquarePurple(){
 
   
     //declare a variable and assign it a random color
-function getRandomColor(){
+let color = function getRandomColor(){
     var letters = '0123456789ABCDEF'
     var color = '#'
     for (var i = 0; i < 6; i++) {
@@ -116,7 +116,8 @@ function chessBoardEight(){
         }
     }
 }
-console.log(getRandomColor())
+
+
 chessBoardOne()
 chessBoardTwo()
 chessBoardThree()
